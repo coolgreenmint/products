@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student>
+		<age>18</age>
+		<sex>woman</sex>
+		<name>李红</name>
+		<address>河南省郑州市</address>
+	</student>
+	<student>
+		<age>18</age>
+		<sex>man</sex>
+		<name>张琪</name>
+		<address>河北省保定市</address>
+	</student>
+	<student>
+		<age>18</age>
+		<sex>woman</sex>
+		<name>赵乐</name>
+		<address>河南省郑州市</address>
+	</student>
+	<student>
+		<age>18</age>
+		<sex>man</sex>
+		<name>孙梦萌</name>
+		<address>天津市</address>
+	</student>
+	<student>
+		<age>18</age>
+		<sex>woman</sex>
+		<name>许二狗子</name>
+		<address>山西省忻州市</address>
+	</student>
+</students>
