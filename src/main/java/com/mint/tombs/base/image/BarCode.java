@@ -53,7 +53,7 @@ public class BarCode {
 
 		// readBarCode(new File("e://images//barCode.jpg"));
 
-		createQRCode("www.baidu.com", new File("e://images//二维码.jpg"));
+		createQRCode("锄禾日当午，汗滴禾下土，谁知盘中餐，粒粒皆辛苦。", new File("e://images//二维码.jpg"));
 
 		readQRCode(new File("e://images//二维码.jpg"));
 
@@ -102,7 +102,7 @@ public class BarCode {
 		hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.M); // 定义错误级别
 		hints.put(EncodeHintType.MARGIN, 2);
 
-		BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, 300, 300);
+		BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, 300, 300, hints);
 
 		Path path = file.toPath();
 		MatrixToImageWriter.writeToPath(bitMatrix, "jpg", path);
@@ -128,7 +128,7 @@ public class BarCode {
 
 		HashMap<DecodeHintType, Object> hints = new HashMap();
 
-		hints.put(DecodeHintType.CHARACTER_SET, "GBK");
+		hints.put(DecodeHintType.CHARACTER_SET, "utf-8");
 		hints.put(DecodeHintType.PURE_BARCODE, Boolean.TRUE);
 		hints.put(DecodeHintType.TRY_HARDER, Boolean.TRUE);
 
@@ -152,7 +152,7 @@ public class BarCode {
 
 		Result result = new MultiFormatReader().decode(bitmap, hints);
 		System.out.println("解析结果：");
-		System.out.println(new String(result.getText().getBytes()));
+		System.out.println(result.getText());
 		System.out.println("二维码格式：" + result.getBarcodeFormat());
 	}
 
